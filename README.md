@@ -62,15 +62,12 @@ install.packages(c("shiny", "leaflet", "dplyr", "randomForest", "sf", "openxlsx"
 ```
 # Correr la app
 shiny::runApp("ruta/al/proyecto")
-Asegurate de que los archivos .xlsx y .geojson estén dentro del directorio datos/.
+Asegurate de que los archivos .rds y .geojson estén dentro del directorio datos/.
 
 #📁 Estructura de archivos
 ```bash
 📂 datos/
-├── ..._2016.xlsx
-... etc.
-├── ..._.xlsx
-├── delitos_2023.xlsx
+├── delitos_reducido.rds
 ├── comunas.geojson
 └── perimetro.geojson
 ```
