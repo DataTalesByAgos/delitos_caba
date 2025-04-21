@@ -28,37 +28,7 @@ theme <- bs_theme(
 # ------------------------------
 # Cargar datos
 # ------------------------------
-cargar_delitos <- function(archivo) {
-  read_excel(archivo, col_types = "text")
-}
-
-archivos <- list.files(path = "datos", pattern = "\\.xlsx$", full.names = TRUE)
-delitos_list <- map(archivos, cargar_delitos)
-delitos_all <- bind_rows(delitos_list)
-
-# ------------------------------
-# Preparar datos
-# ------------------------------
-delitos <- delitos_all %>%
-  rename_with(tolower) %>%
-  mutate(
-    latitud = as.numeric(gsub(",", ".", latitud)),
-    longitud = as.numeric(gsub(",", ".", longitud)),
-    anio = as.integer(anio),
-    franja = as.integer(franja),
-    subtipo = str_trim(str_to_title(subtipo)),
-    cantidad = as.numeric(gsub(",", ".", cantidad))
-  ) %>%
-  filter(
-    !is.na(latitud),
-    !is.na(longitud),
-    !is.na(franja),
-    !is.na(subtipo),
-    between(latitud, -35, -34),
-    between(longitud, -59, -58),
-    subtipo %in% c("Robo Total", "Robo Automotor", "Hurto Total", "Hurto Automotor", "Lesiones Dolosas")
-  ) %>%
-  mutate(subtipo = factor(subtipo))
+delitos <- readRDS("datos/delitos_reducido.rds")
 
 # ------------------------------
 # Modelo Random Forest
@@ -201,5 +171,5 @@ server <- function(input, output, session) {
 
 # ------------------------------
 # Lanzar App
-# -----------------------------l-
+# ------------------------------
 shinyApp(ui, server)
