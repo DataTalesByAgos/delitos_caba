@@ -85,8 +85,9 @@ install.packages(c(
 ```r
 shiny::runApp("ruta/al/proyecto")
 ```
+---
 
-📌 Créditos
+### Créditos
 Desarrollado con ❤️ en R por DataTalesByAgos.
 Contribuciones, issues y sugerencias son bienvenidas. 🙌
 
