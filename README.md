@@ -3,7 +3,7 @@
 **Versión: 0.9.0 (Beta)**  
 Una app interactiva desarrollada en **R + Shiny** que estima la probabilidad de delitos en función de la **ubicación** y la **hora del día** dentro de la Ciudad Autónoma de Buenos Aires (CABA).
 
-![App_mapa_delitos_CABA](https://drive.google.com/file/d/1ZSMkxQxpdAErnz3bbM27c3k2f2jCYsCU/view?usp=sharing)
+![App_mapa_delitos_CABA](img/preview.png)
 
 ---
 
