@@ -77,7 +77,7 @@ install.packages(c(
 ├── comunas.geojson
 └── perimetro.geojson
 📄 app.R
-📄 cleaner.R
+📄 cleaner.R #ya esta parcialmente curado de los xlsx originales del GCBA
 📄 README.md
 ```
 
